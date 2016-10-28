@@ -1,0 +1,6 @@
+c:\users\tribbyx\documents\visual studio 2015\Projects\tcp_p2p_Client\tcp_p2p_Client\bin\Debug\tcp_p2p_Client.exe.config
+c:\users\tribbyx\documents\visual studio 2015\Projects\tcp_p2p_Client\tcp_p2p_Client\bin\Debug\tcp_p2p_Client.exe
+c:\users\tribbyx\documents\visual studio 2015\Projects\tcp_p2p_Client\tcp_p2p_Client\bin\Debug\tcp_p2p_Client.pdb
+c:\users\tribbyx\documents\visual studio 2015\Projects\tcp_p2p_Client\tcp_p2p_Client\obj\Debug\tcp_p2p_Client.csprojResolveAssemblyReference.cache
+c:\users\tribbyx\documents\visual studio 2015\Projects\tcp_p2p_Client\tcp_p2p_Client\obj\Debug\tcp_p2p_Client.exe
+c:\users\tribbyx\documents\visual studio 2015\Projects\tcp_p2p_Client\tcp_p2p_Client\obj\Debug\tcp_p2p_Client.pdb
