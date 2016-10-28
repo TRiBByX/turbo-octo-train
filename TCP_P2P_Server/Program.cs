@@ -13,24 +13,16 @@ namespace TCP_P2P_Server
     {
         static void Main(string[] args)
         {
-            try
-            {
-                TcpListener myServer = new TcpListener(IPAddress.Any, 9000);
-                myServer.Start();
+            TcpListener myServer = new TcpListener(IPAddress.Any, 9000);
+            myServer.Start();
 
-                while (true)
-                {
-                    TcpClient myServerTcpconnection = myServer.AcceptTcpClient();
-                    Console.WriteLine("Server started");
-                    Echo service = new Echo(myServerTcpconnection);
-                    Thread myThread = new Thread(service.Message);
-                    myThread.Start();
-                }
-            }
-            catch (Exception e)
+            while (true)
             {
-                Console.WriteLine(e.ToString());
-                Console.ReadKey();
+                TcpClient myServerTcpconnection = myServer.AcceptTcpClient();
+                Console.WriteLine("Connection Established");
+                Echo service = new Echo(myServerTcpconnection);
+                Thread myThread = new Thread(service.DoIt);
+                myThread.Start();
             }
         }
     }

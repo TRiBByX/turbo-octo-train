@@ -10,81 +10,45 @@ namespace TCP_P2P_Server
 {
     class Echo
     {
-        private TcpClient connectionseet;
+        private TcpClient _connectionset;
 
-        public Echo(TcpClient connectionseet)
+        public Echo(TcpClient connectionset)
         {
-            this.connectionseet = connectionseet;
+            this._connectionset = connectionset;
         }
 
-        internal void Message()
+        internal void DoIt()
         {
 
-            Stream connectionStream = connectionseet.GetStream();
+            Stream connectionStream = _connectionset.GetStream();
 
             StreamReader sReader = new StreamReader(connectionStream);
             StreamWriter sWriter = new StreamWriter(connectionStream);
             sWriter.AutoFlush = true;
             string message = "";
-            try
+
+            char[] sepChars = {' '};
+
+            string[] splitMessage = message.Split(sepChars);
+            while (!string.IsNullOrEmpty(message))
             {
-                while (message.ToLower() != "stop")
+                switch (splitMessage[0])
                 {
-                    message = sReader.ReadLine();
+                    case "GET":
+                        //byte[] newMessage = File.ReadAllBytes($@"{Environment.SpecialFolder.MyDocuments}\{splitMessage[1]}");
+                        message =
+                            Convert.ToBase64String(
+                                File.ReadAllBytes($@"{Environment.SpecialFolder.MyDocuments}\{splitMessage[1]}"));
+                        sWriter.Write(message);
+                        break;
+                    case "SEND":
 
-                    Console.WriteLine(message);
-
-                    if (!string.IsNullOrWhiteSpace(message))
-                    {
-                        var BatFile = System.IO.File.ReadAllText(@"C:\Users\allan\Documents\Den\t.txt");
-                        var JokFile = System.IO.File.ReadAllText(@"C:\Users\allan\Documents\Den\t.txt");
-
-                        string[] messages = new string[2];
-                        messages = message.Split(' ');
-
-                        var command = messages[0];
-                        var fileSelect = messages[1];
-
-                        if (command.ToString().ToUpper() == "c")
-                        {
-                            if (fileSelect.ToString().ToUpper() == "batman")
-                                sWriter.WriteLine(BatFile);
-                            else if (fileSelect.ToString().ToUpper() == "joker")
-                                sWriter.WriteLine(JokFile);
-                        }
-                        else
-                        {
-                            sWriter.WriteLine("You messed up...");
-                        }
-
-
-
-                        sWriter.Close();
-                        //}
-                        //catch (ArgumentException e)
-                        //{
-
-                        //    throw e;
-                        //}
-
-                        //string response = Console.ReadLine();
-
-                        sWriter.WriteLine(message.ToUpper());
-                    }
-                    else
-                    {
-                        sWriter.WriteLine(message.ToUpper());
-                    }
-
-
+                        break;
+                    default:
+                        break;
                 }
             }
-            catch (Exception)
-            {
-
-                sWriter.Close();
-                sReader.Close();
-            }
+            connectionStream.Close();
 
         }
     }

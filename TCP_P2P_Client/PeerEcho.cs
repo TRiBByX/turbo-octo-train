@@ -17,7 +17,7 @@ namespace TCP_P2P_Client
             this.connectionseet = connectionseet;
         }
 
-        internal void Message()
+        internal void DoIt()
         {
 
             Stream connectionStream = connectionseet.GetStream();
@@ -25,29 +25,12 @@ namespace TCP_P2P_Client
             StreamReader sReader = new StreamReader(connectionStream);
             StreamWriter sWriter = new StreamWriter(connectionStream);
             sWriter.AutoFlush = true;
-            string message = "";
-            try
-            {
-                while (true)
-                {
-                    message = sReader.ReadLine();
 
-                    Console.WriteLine(message);
-
-                    var file1 = System.IO.File.ReadAllText(@"C:\Users\allan\Documents\Den\t.txt");
-                    var file2 = System.IO.File.ReadAllText(@"C:\Users\allan\Documents\Den\t.txt");
-
-                    sWriter.WriteLine(message.ToUpper());
-                }
-            }
-            catch (Exception e)
+            while (true)
             {
-                Console.WriteLine(e.Message);
-            }
-            finally
-            {
-                sWriter.Close();
-                sReader.Close();
+                string message = "";
+                sWriter.WriteLine(message);
+                Console.WriteLine($"Server: {sReader.ReadLine()}");
             }
         }
     }
