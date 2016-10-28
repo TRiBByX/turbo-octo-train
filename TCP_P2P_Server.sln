@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCP_P2P_Server", "TCP_P2P_Server\TCP_P2P_Server.csproj", "{5EE2FFBB-CBBF-4CCA-BCB4-65A2B294ED83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCP_P2P_Client", "TCP_P2P_Client\TCP_P2P_Client.csproj", "{AAACB5F4-8A05-4281-A557-97EEBA74A536}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5EE2FFBB-CBBF-4CCA-BCB4-65A2B294ED83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EE2FFBB-CBBF-4CCA-BCB4-65A2B294ED83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EE2FFBB-CBBF-4CCA-BCB4-65A2B294ED83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAACB5F4-8A05-4281-A557-97EEBA74A536}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAACB5F4-8A05-4281-A557-97EEBA74A536}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAACB5F4-8A05-4281-A557-97EEBA74A536}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAACB5F4-8A05-4281-A557-97EEBA74A536}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
